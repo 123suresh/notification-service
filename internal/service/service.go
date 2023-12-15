@@ -1,12 +1,15 @@
 package service
 
-import "github.com/suresh/notification/internal/repository"
+import (
+	"github.com/suresh/notification/internal/repository"
+)
 
 type Service struct {
 	repo repository.RepoInterface
 }
 
 type ServiceInterface interface {
+	Notify
 }
 
 func NewService(repo repository.RepoInterface) ServiceInterface {

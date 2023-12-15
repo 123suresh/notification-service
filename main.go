@@ -4,7 +4,6 @@ import (
 	"github.com/joho/godotenv"
 	"github.com/sirupsen/logrus"
 	"github.com/suresh/notification/internal/controller"
-	"github.com/suresh/notification/internal/grpc"
 	"github.com/suresh/notification/internal/repository"
 	"github.com/suresh/notification/internal/service"
 )
@@ -18,6 +17,5 @@ func main() {
 	repo := repository.NewRepo()
 	svc := service.NewService(repo)
 	ctl := controller.NewController(svc)
-	grpc.CreateServer()
 	ctl.Run()
 }

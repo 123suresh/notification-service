@@ -17,13 +17,14 @@ func NewController(svc service.ServiceInterface) *Controller {
 	ctl := &Controller{}
 	ctl.router = gin.Default()
 	ctl.svc = svc
+	ctl.Routes()
 	return ctl
 }
 
 func (ctl *Controller) Run() {
 	port := os.Getenv("PORT")
 	if port == "" {
-		port = "8082"
+		port = "8083"
 	}
 	err := ctl.router.Run(":" + port)
 	if err != nil {
