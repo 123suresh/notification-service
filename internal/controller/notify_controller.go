@@ -10,7 +10,6 @@ import (
 )
 
 func (ctl *Controller) CreateNotify(c *gin.Context) {
-	logrus.Info("data => ")
 	notifyReq := &model.NotifyRequest{}
 	logrus.Info("data => ", notifyReq)
 	err := c.ShouldBindJSON(notifyReq)
